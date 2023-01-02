@@ -1,0 +1,104 @@
+[{
+  "_id": {
+    "$oid": "638708be398a8ee46f73431b"
+  },
+  "sname": "Chater Lin",
+  "dob": "2001-12-24",
+  "gender": "M",
+  "clid": "2A",
+  "photo": "c1fe5d6eccd173d9d2461d4c24cc969d.jpg",
+  "sid": 2
+},{
+  "_id": {
+    "$oid": "638aca6c668e6e76a9dfc76a"
+  },
+  "sname": "Mary cheng",
+  "dob": "2018-01-01",
+  "gender": "F",
+  "clid": "2B",
+  "photo": "46d6b432ef190bdd0bac9fae9dba0bdd.jpg",
+  "sid": 4
+},{
+  "_id": {
+    "$oid": "638acbaee31a30e09aa955c1"
+  },
+  "sname": "Wai, Cheng Tak Wai",
+  "dob": "1234-01-01",
+  "gender": "F",
+  "clid": "2B",
+  "photo": "e09ae0a94d77a7a79ea1a1c85082d78b.jpg",
+  "sid": 5
+},{
+  "_id": {
+    "$oid": "6396b29b70d79cc1396937c3"
+  },
+  "sname": "Winson Wan",
+  "dob": "2015-01-01",
+  "gender": "M",
+  "clid": [
+    "1A",
+    "2B"
+  ],
+  "photo": "9dfab83db15c2eb42319eee5f72b8efe.jpg",
+  "sid": 6
+},{
+  "_id": {
+    "$oid": "639947f4a74e22518467b0f1"
+  },
+  "sname": "tommy chan",
+  "dob": "2015-01-01",
+  "gender": "M",
+  "clid": "1C",
+  "photo": "4d7bcf9cb86644feb9293c1ffcc11f5f.jpg",
+  "sid": 7
+},{
+  "_id": {
+    "$oid": "63a0073485856cc0d09e334e"
+  },
+  "sname": "Wong Sir",
+  "dob": "1950-02-12",
+  "gender": "M",
+  "clid": "2B",
+  "photo": "304f292c08cab1d4de19e7c55121ee97.jpg",
+  "sid": 9
+},{
+  "_id": {
+    "$oid": "63a0086885856cc0d09e334f"
+  },
+  "sname": "tina chan",
+  "dob": "1900-10-01",
+  "gender": "F",
+  "clid": "2C",
+  "photo": "1c96b7e08706111480b3ec43872be6f9.jpg",
+  "sid": 10
+},{
+  "_id": {
+    "$oid": "63a0122985856cc0d09e3351"
+  },
+  "sname": "ck chan",
+  "dob": "2015-01-01",
+  "gender": "F",
+  "clid": "1C",
+  "photo": "50977ee0285c34405eb715e1aa551546.jpg",
+  "sid": 11
+},{
+  "_id": {
+    "$oid": "63a0138085856cc0d09e3353"
+  },
+  "sname": "chole chan",
+  "dob": "2015-01-01",
+  "gender": "F",
+  "clid": "1C",
+  "photo": "fdb20410483ed4bdebdcf52ac2daf09b.jpg",
+  "sid": 13
+},{
+  "_id": {
+    "$oid": "63a511d0ffc20b00c1c9f510"
+  },
+  "sname": "Handsome Wan",
+  "dob": "2014-12-30",
+  "gender": "M",
+  "clid": "1B",
+  "photo": "52ce678b78aabfe2937049799309e95e.jpg",
+  "sid": 15
+}]

@@ -1,0 +1,85 @@
+<!-- PE076DS-3 Web Application Development Project ; Group mate name list: Lin Hoi Yin (12) , WanCheukLun (02) , Chan Yim Tao (5), Cheng Tak Wai Dawie (3) -->
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <title>Main Menu</title>
+</head>
+<body>
+    <div class="container">
+        <div class="jumbotron">
+            <div style="text-align: center;">
+    <h1>Interest Class System</h1>
+            </div>
+     </div>
+     <p></p>
+     <p></p>
+     <p></p>
+    <div style="text-align: right;">
+    <span style="color: green;">
+    Login as: <%=login_name%><br/>
+    Role: <%=role%>
+    </span>
+    <p></p>
+    <a href="/checklogin/logout"><span style="color: purple;">Logout</span></a>
+    
+        </div>
+    <p></p>
+    <ul class="nav nav-tabs">
+        <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Student Management <span class="caret"></span></a> 
+            <ul class="dropdown-menu">
+                <li><a href="/addstudent">Add Student  <span class="glyphicon glyphicon-plus"></span></a></li>
+                <li><a href="/liststudent">List Student  <span class="glyphicon glyphicon-list-alt"></a></li>
+                <% 
+                    let li ='';
+                    if(role == "manager")
+                        li+= '<li><a href="/updatestudent">Update & Delete Student  <span class="glyphicon glyphicon-refresh"></a></li>';
+                %>
+                <%-li%>
+
+                <li><a href="/searchstudent">Advance Search Student  <span class="glyphicon glyphicon-search"></a></li>
+            </ul>
+        </li>
+        <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Course Management <span class="caret"></span></a> 
+            <ul class="dropdown-menu">
+                <li><a href="#">Add Course  <span class="glyphicon glyphicon-plus"></a></li>
+                <li><a href="#">List Course  <span class="glyphicon glyphicon-list-alt"></a></li>
+                <li><a href="#">Delete Course  <span class="glyphicon glyphicon-minus"></a></li>
+                <li><a href="#">Update Course  <span class="glyphicon glyphicon-refresh"></a></li>
+                <li><a href="#">Search Course  <span class="glyphicon glyphicon-search"></a></li>
+            </ul>
+        </li>
+        <li><a class="dropdown-toggle" data-toggle="dropdown" href="#">Enrollment Management <span class="caret"></span></a>
+            <ul class="dropdown-menu">
+                <li><a href="#">Add Enrollment  <span class="glyphicon glyphicon-plus"></a></li>
+                <li><a href="#">List Enrollment  <span class="glyphicon glyphicon-list-alt"></a></li>
+                <li><a href="#">Delete Enrollment  <span class="glyphicon glyphicon-minus"></a></li>
+                <li><a href="#">Update Enrollment  <span class="glyphicon glyphicon-refresh"></a></li>
+                <li><a href="#">Search Enrollment  <span class="glyphicon glyphicon-search"></a></li>
+            </ul>
+        </li>
+
+        <% 
+        let li1 ='';
+        if(role == "manager")
+            li1+= '<li><a class="dropdown-toggle" data-toggle="dropdown" href="#">Account Management <span class="caret"></span></a>'+
+            '<ul class="dropdown-menu">'+
+                '<li><a href="/addacc">Add Account  <span class="glyphicon glyphicon-plus"></a></li>'+
+                '<li><a href="/delacc">Delete Account  <span class="glyphicon glyphicon-minus"></a></li>'+
+            '</ul>'+
+        '</li>';
+        %>
+        <%-li1%>
+    </ul>
+</div>
+<br>
+<br>
+<div class="text-center">
+<img src="../images/music800x533.jpg" width="500" id="i1" >
+<img src="../images/sport800x533.jpg" width="500" id="i2" >
+<img src="../images/chess800x533.jpg" width="500" id="i3">
+<img src="../images/childcooking735x490.jpg" width="500" id="i4">
+</div>
+</body>

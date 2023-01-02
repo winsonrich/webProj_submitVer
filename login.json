@@ -1,0 +1,78 @@
+[{
+  "_id": {
+    "$oid": "63832fe9f724ba005f2bf9d0"
+  },
+  "liname": "manager",
+  "password": "123456",
+  "role": "manager"
+},{
+  "_id": {
+    "$oid": "63833018f724ba005f2bf9d1"
+  },
+  "liname": "clerk",
+  "password": "123456",
+  "role": "staff"
+},{
+  "_id": {
+    "$oid": "6392bf53d121a18b0079bb2c"
+  },
+  "liname": "mary",
+  "password": "mary",
+  "role": "manager"
+},{
+  "_id": {
+    "$oid": "6397ec76ba1cfc4d9461ef80"
+  },
+  "liname": "wai",
+  "password": "wai",
+  "role": "manager"
+},{
+  "_id": {
+    "$oid": "63981731ea530478108576d9"
+  },
+  "liname": "manager1",
+  "password": "123456",
+  "role": "manager"
+},{
+  "_id": {
+    "$oid": "639842f919229ac2eebe9f3f"
+  },
+  "liname": "manager2",
+  "password": "abc!123",
+  "role": "manager"
+},{
+  "_id": {
+    "$oid": "63a1712da13ed2c08e4c2215"
+  },
+  "liname": "managerC",
+  "password": "123456!",
+  "role": "manager"
+},{
+  "_id": {
+    "$oid": "63a17243a13ed2c08e4c2216"
+  },
+  "liname": "managerWinson",
+  "password": "123456!",
+  "role": "manager"
+},{
+  "_id": {
+    "$oid": "63a17251a13ed2c08e4c2217"
+  },
+  "liname": "managerWai",
+  "password": "123456!",
+  "role": "manager"
+},{
+  "_id": {
+    "$oid": "63a500e3ffc20b00c1c9f50f"
+  },
+  "liname": "staffMary",
+  "password": "abc@123",
+  "role": "staff"
+},{
+  "_id": {
+    "$oid": "63a514bdffc20b00c1c9f511"
+  },
+  "liname": "waiwaiwai",
+  "password": "123456!",
+  "role": "staff"
+}]

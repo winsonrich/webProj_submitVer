@@ -1,0 +1,142 @@
+<!-- PE076DS-3 Web Application Development Project ; Group mate name list: Lin Hoi Yin (12) , WanCheukLun (02) , Chan Yim Tao (5), Cheng Tak Wai Dawie (3) -->
+<head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+            <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+            <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+            <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+        <title>Update Students</title>
+        
+        
+        </head>
+        <body>
+        
+        
+        <div class="jumbotron">
+                <div class="container"> 
+        <h1>Update Students</h1>
+        <br>
+        <br>
+        <br>
+        <button class="btn btn-info"><a style="color: white;" href="../updatestudent">Back to Update Student List </a><span class="glyphicon glyphicon-home"></span></button>
+                </div>
+        </div>
+        <br>
+        <script>
+                function validator() {
+                    var TCode = document.getElementById("sname").value;
+                    if( /[^a-zA-Z]/.test(TCode)){//if( /[^a-zA-Z0-9]/.test(TCode)){
+                        alert("Please enter a name that ONLY with letters!");
+                        return false;
+                    }
+                    return true;
+                }
+        </script>
+        <div class="container"> 
+                <form action="/updatestudentdetails/edit" method="post" enctype="multipart/form-data" onsubmit="validator()">
+                        <% for(let x of list2){ %>
+                                <div>
+                                        <label> Name: </label>
+                                        <p> <input type="text" name="sname" class="form=control" style="width:30%;" value='<%= x["sname"]%>'/></p>
+                                </div>
+                                <br>
+                                <div>
+                                        <label>Date of Birth: </label>
+                                        <p><input type="date" name="dob" value='<%= x["dob"]%>'/></p>
+                                </div>
+                                <br>
+                                
+                                
+                                <div>
+                                        <label>Gender: </label>
+
+                                        <p> 
+                                        <% 
+                                        let input ='';
+                                        if(x["gender"]=="F")
+                                        input+= '<input type="radio" id="F" name="gender" value="F" checked/>';
+                                        else input+= '<input type="radio" id="F" name="gender" value="F" />';
+                                        %>
+                                        <%-input%>
+                                        <label for="Female">Female</label>
+                                        <% 
+                                        let input2 ='';
+                                        if(x["gender"]=="M")
+                                        input2+= '<input type="radio" id="M" name="gender" value="M" checked/>';
+                                        else input2+= '<input type="radio" id="M" name="gender" value="M" />';
+                                        %>
+                                        <%-input2%>
+                                        <label for="male">Male</label>
+                                        <% 
+                                        let input3 ='';
+                                        if(x["gender"]=="X")
+                                        input3+= '<input type="radio" id="X" name="gender" value="X" checked/>';
+                                        else input3+= '<input type="radio" id="X" name="gender" value="X" />';
+                                        %>
+                                        <%-input3%>
+                                        <label for="X">X</label>
+
+                                        
+                                        </p>
+                                </div>
+                                <br>
+                                <div>
+                                        <label for="class"> Class: </label>
+                                        <!--https://stackoverflow.com/questions/1085801/get-selected-value-in-dropdown-list-using-javascript-->
+                                        <select name="clid" size="1" id="class" class="form-control" style="width:20%;">
+                                        <option>Please select</option>
+                                        <% 
+                                        let option ='';
+                                        if(x["clid"]=="1A")
+                                        option+= '<option value="1A" selected="selected">1A</option>';
+                                        else option+= '<option value="1A">1A</option>';
+                                        %>
+                                        <%-option%>
+                                        <% 
+                                        let option2 ='';
+                                        if(x["clid"]=="1B")
+                                        option2+= '<option value="1B" selected="selected">1B</option>';
+                                        else option2+= '<option value="1B">1B</option>';
+                                        %>
+                                        <%-option2%>
+                                        <% 
+                                        let option3 ='';
+                                        if(x["clid"]=="1C")
+                                        option3+= '<option value="1C" selected="selected">1C</option>';
+                                        else option3+= '<option value="1C">1C</option>';
+                                        %>
+                                        <%-option3%>
+                                        <% 
+                                        let option4 ='';
+                                        if(x["clid"]=="2A")
+                                        option4+= '<option value="2A" selected="selected">2A</option>';
+                                        else option4+= '<option value="2A">2A</option>';
+                                        %>
+                                        <%-option4%>
+                                        <% 
+                                        let option5 ='';
+                                        if(x["clid"]=="2B")
+                                        option5+= '<option value="2B" selected="selected">2B</option>';
+                                        else option5+= '<option value="2B">2B</option>';
+                                        %>
+                                        <%-option5%>
+                                        <% 
+                                        let option6 ='';
+                                        if(x["clid"]=="2C")
+                                        option6+= '<option value="2C" selected="selected">2C</option>';
+                                        else option6+= '<option value="2C">2C</option>';
+                                        %>
+                                        <%-option6%>
+                                        </select>
+                                </div>
+                                <br>
+                                <div>
+                                        <label for="photo"> Photo: </label>
+                                        <input type="file" class="form-control-file" name="photo" id="photo" />
+                                </div>
+                                <br>                                
+                                <input type="submit" class="btn btn-primary" value="Save"/>
+                        <%}%>
+                </form>
+        </div>
+        </body>

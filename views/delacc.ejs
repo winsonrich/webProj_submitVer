@@ -1,0 +1,212 @@
+<!-- PE076DS-3 Web Application Development Project ; Group mate name list: Lin Hoi Yin (12) , WanCheukLun (02) , Chan Yim Tao (5), Cheng Tak Wai Dawie (3) -->
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <!--<style> body {background-color: rgb(235, 228, 228); }</style>-->
+    
+    
+    <style>
+        body {font-family: Arial, Helvetica, sans-serif;}
+        
+        /* The Modal (background) */
+        .modal {
+          display: none; /* Hidden by default */
+          position: fixed; /* Stay in place */
+          z-index: 1; /* Sit on top */
+          padding-top: 100px; /* Location of the box */
+          left: 0;
+          top: 0;
+          width: 100%; /* Full width */
+          height: 100%; /* Full height */
+          overflow: auto; /* Enable scroll if needed */
+          background-color: rgb(0,0,0); /* Fallback color */
+          background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+        }
+        
+        /* Modal Content */
+        .modal-content {
+          position: relative;
+          background-color: #fefefe;
+          margin: auto;
+          padding: 0;
+          border: 1px solid #888;
+          width: 30%;
+          box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+          -webkit-animation-name: animatetop;
+          -webkit-animation-duration: 0.4s;
+          animation-name: animatetop;
+          animation-duration: 0.4s
+        }
+        
+        /* Add Animation */
+        @-webkit-keyframes animatetop {
+          from {top:-300px; opacity:0} 
+          to {top:0; opacity:1}
+        }
+        
+        @keyframes animatetop {
+          from {top:-300px; opacity:0}
+          to {top:0; opacity:1}
+        }
+        
+        /* The Close Button */
+        .close {
+          color: white;
+          float: right;
+          font-size: 28px;
+          font-weight: bold;
+        }
+        
+        .close:hover,
+        .close:focus {
+          color: #000;
+          text-decoration: none;
+          cursor: pointer;
+        }
+        
+        .modal-header {
+          padding: 2px 16px;
+          background-color: rgb(91,192,222);
+          color: white;
+        }
+        
+        .modal-body {padding: 2px 16px;}
+        
+        .modal-footer {
+          padding: 2px 16px;
+          background-color: rgb(91,192,222);
+          color: white;
+        }
+    </style>
+        
+    <title>Delete Account</title>
+    </head>
+<body>
+    
+    <div class="jumbotron">
+        <div class="container"> 
+<h1>Delete User Account</h1>
+<br>
+<br>
+<br>
+<button class="btn btn-info"><a style="color: white;" href="/menu">Back to Menu  </a><span class="glyphicon glyphicon-home"></span></button>
+        </div>
+</div>
+    <br>
+    
+    <div class="container"> 
+    <form method="post" action="/delacc" id="delForm"> <div>
+    <td>
+    <label>Delete Users:</label> 
+    <input type="text" size="35" name="targetName" class="form-control" style="width:25%" placeholder="Please enter a user name" onkeydown = "return searchKeyPress(event);">
+    </div>  
+    <br>
+    <button class="btn btn-warning" id="btnSearch" onclick="genModal()" type="button">Delete </button> 
+    </form>
+
+        <!-- The Modal -->
+        <div id="myModal" class="modal">
+            <!-- Modal content -->
+            <div class="modal-content">
+            <div class="modal-header">
+                <span class="close" id="close">&times;</span>
+                <h2>Confirm Delete?</h2>
+            </div>
+            <div class="modal-body">
+                <table border="0" align="center" height="16%">
+                    <tr>
+                        <td style="width: 16%; text-align:center; float:center;">
+                            <button class="btn btn-warning" onclick="confirmDelModal()">Delete <span class="glyphicon glyphicon-minus"></span></button>
+                        </td>
+                        <td style="width: 16%; text-align:center; float:center;">
+                            <button class="btn btn-warning" id="cancelBtn" onclick="modal.style.display = none;">Cancel <span class="glyphicon glyphicon-remove"></span></button>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            </div>
+        </div>
+
+        <script>
+            function searchKeyPress(e)
+            {
+                // look for window.event in case event isn't passed in
+                e = e || window.event;
+                if (e.keyCode == 13)
+                {
+                    document.getElementById('btnSearch').click();
+                    return false;
+                }
+                return true;
+            }
+
+            function genModal() {
+                // Get the modal
+                let modal = document.getElementById("myModal");
+                
+                // Get the button that opens the modal
+                let btn = document.getElementById("myBtn");
+                
+                // cancel button in the modal
+                let cancelbtn = document.getElementById("cancelBtn");
+
+                // Get the <span> element that closes the modal
+                let span = document.getElementById("close");
+
+                // When the user clicks the button, open the modal 
+                modal.style.display = "block";
+                // }
+
+                // When the user clicks the cancel button, close the modal 
+                cancelbtn.onclick = function() {
+                modal.style.display = "none";
+                }
+                
+                // When the user clicks on <span> (x), close the modal
+                span.onclick = function() {
+                modal.style.display = "none";
+                }
+                
+                // When the user clicks anywhere outside of the modal, close it
+                window.onclick = function(event) {
+                if (event.target == modal) {
+                    modal.style.display = "none";
+                }
+                }
+            }
+
+            function confirmDelModal() {
+                document.querySelector("#delForm").submit();
+            }
+        </script>
+    </td>
+
+    <tr>
+        <font color="red"><%=alertmsg ? alertmsg : ""%></font>
+    </tr>
+    <br>
+    <table class="table table-bordered text-center table table-striped" style="width:30%"> 
+        <!--table-bordered text-center table table-striped-->
+        <thead style="background-color: rgba(179, 172, 172, 0.247)">
+            <tr>
+                <th>Username</th>
+                <th>Role</th>            
+            </tr>            
+    <tbody style="background-color: rgba(245, 241, 241, 0.977)">
+        <% for(let x of list){ %> <!-- loop 每個array -->
+        <tr>
+            <td><%= x["liname"]%></td>
+            <td><%= x["role"]%></td>
+            
+                        
+        </tr>
+    <% } %>
+    </tbody>
+</table>
+    </div>
+        
+</body>

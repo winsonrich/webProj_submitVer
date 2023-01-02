@@ -1,0 +1,67 @@
+<!-- PE076DS-3 Web Application Development Project ; Group mate name list: Lin Hoi Yin (12) , WanCheukLun (02) , Chan Yim Tao (5), Cheng Tak Wai Dawie (3) -->
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+<title>List All Students</title>
+</head>
+<body>
+<div class="jumbotron">
+        <div class="container"> 
+<h1>List All Students</h1>
+<br>
+<br>
+<br>
+
+<table border="0" width="100%">
+    <th><td align="left">
+        <button class="btn btn-info"><a style="color: white;" href="/menu">Back to Menu  </a><span class="glyphicon glyphicon-home"></span></button>
+        <button class="btn btn-warning"><a style="color: white;" href="/addstudent">Add Student  </a><span class="glyphicon glyphicon-plus"></span></button>
+        <button class="btn btn-success"><a style="color: white;" href="/searchstudent">Advance Search Student  </a><span class="glyphicon glyphicon-search"></span></button>
+    </td>
+    <td align="right">
+        <form action="/liststudent/searchstudent" method="post">
+            <input type="submit" class="btn btn-primary" value="Search" style="float:right;"/>
+            <input type="text" size="35%" name="keyword" class="form-control" style="width: 20%; text-align:left; float:right;" placeholder="Keywords">       
+        </form>
+    </td>
+    </th>
+    <tr><td></td>
+        <td align="right" colspan="2">
+            <font color="red" style="float:right";><%=errmsg ? errmsg : ""%></font>
+        </td>
+    </tr>
+</table>
+        </div>
+</div>
+<br>
+<div class="container"> 
+<table class="table table-bordered text-center table table-striped">
+    <thead>
+        <tr>
+            <th>Student ID</th>
+            <th>Student name</th>
+            <th>Date of Birth</th>
+            <th>Gender</th>
+            <th>Class</th>
+            <th>Photo</th>
+
+        </tr>
+
+    <tbody>
+        <% for(let x of list){ %> <!-- loop 每個array -->
+            <tr>
+                <td><%= x["sid"]%></td>
+                <td><a href='/liststudentdetails/<%= x["_id"]%>'><%= x["sname"]%></a></td>
+                <td><%= x["dob"]%></td>
+                <td><%= x["gender"]%></td>
+                <td><%= x["clid"]%></td>
+                <td><img src="/images/<%=x.photo%>" width='100' /></td>
+            </tr>
+        <% } %>
+    </tbody>
+</table>
+</div>
+</body>

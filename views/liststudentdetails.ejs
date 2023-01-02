@@ -1,0 +1,30 @@
+<!-- PE076DS-3 Web Application Development Project ; Group mate name list: Lin Hoi Yin (12) , WanCheukLun (02) , Chan Yim Tao (5), Cheng Tak Wai Dawie (3) -->
+<head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+        <title>List Student detials</title>
+</head>
+<body>
+        <div class="jumbotron">
+        <div class="container">
+        <% for(let x of list2){ %> <!-- loop 每個array -->     
+                <h1>Student <%= x["sname"]%></h1>
+                <br>
+                <br>
+                <br>
+                <button class="btn btn-info"><a style="color: white;" href="/liststudent">Back to List All Students  </a><span class="glyphicon glyphicon-list-alt"></span></button>
+                </div>
+                </div>
+                <div class="container"> 
+                <br>
+                <img src="/images/<%=x.photo%>" alt="photo" width="200"> 
+                <h2>Student ID:  <%= x["sid"]%></h2>
+                <h2>Date of Birth:  <%= x["dob"]%></h2>
+                <h2>Gender:  <%= x["gender"]%></h2>
+                <h2>Class:  <%= x["clid"]%></h2>
+        <%}%>  
+        </div>
+</body>

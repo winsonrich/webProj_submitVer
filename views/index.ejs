@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+  <!-- PE076DS-3 Web Application Development Project ; Group mate name list: Lin Hoi Yin (12) , WanCheukLun (02) , Chan Yim Tao (5), Cheng Tak Wai Dawie (3) -->
+<head>
+    <title>System of School</title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style> body {background-color: rgb(235, 228, 228); 
+        text-align: center;
+        font-family: Arial, Helvetica, sans-serif;}</style>
+    
+    <script src="js/jquery-3.6.1.js"></script>
+    
+    <script>
+    $(document).ready(function(){
+        $("img").on("mouseover",function(){
+            $("#info").html("<h2>Welcome !<h2>");
+        });
+        $("img").on("mouseout",function(){
+            $("#info").html("");
+        });
+    });
+    </script>
+  </head>
+  <body>
+    <!--<h1>Interest Class System</h1>-->
+    <h1><%= title %></h1>
+    <p><a href="/login"><img src="../images/childinterestclass.jpeg" alt="school photo" width="500"></a></p>
+    <div id="info" style="color: rgb(97, 157, 200)"></div>
+  </body>
+</html>
