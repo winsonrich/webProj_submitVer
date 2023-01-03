@@ -9,6 +9,6 @@ Pre-requisites for developer:
 3. To install packages of Express and EJS to your web folder, run npm install -g express-ejs or npm i -g express-ejs
 4. DB demo records (login.json and student.json) must be imported to MongoDB in order to display photos properly.
 5. If the demo records are imported to your DB and the photos cannot display properly, it is suggested to:
-  5.1. Update the photos using the user interface.
-  5.2. Edit the string value of photo name in DB records to match the related file name.
-  5.3. Try to create the new record with new photo to test and make sure whether the system is configured well.
+-5.1. Update the photos using the user interface.
+-5.2. Edit the string value of photo name in DB records to match the related file name.
+-5.3. Try to create the new record with new photo to test and make sure whether the system is configured well.
